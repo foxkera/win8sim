@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../font-awesome/css/font-awesome.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    <link rel="stylesheet" href="desktop.css">
+    
+    <title>Okna8</title>
+</head>
+<body style="background-image: url(wallpapers/img0.jpg); background-repeat: no-repeat; background-size: 100vw 100vh;" >
+    <div class="taskpanel">
+        <a href="../start/startMenu.html" class="taskbar_startbutton">
+            <div class="startButtonOnDesktop">
+                <i style="position: absolute; font-size: 26px; left: 12px; bottom: 8px;" class="fa fa-windows" aria-hidden="true"></i>
+            </div>
+        </a>
+        
+    </div>
+    <!-- Перетаскиваемый DIV -->
+    <div id="window">
+    <!-- Включите заголовок DIV с тем же именем, что и перетаскиваемый DIV, а затем "header" -->
+        <div id="windowHeader">Тестовое окно</div>
+        <p style="margin-top: 30; margin-left: 12; margin-right: 30; margin-bottom: 30px;">Окна в разработке. Coming soon.</p>
+    </div>
+    <div class="startopenani"></div>
+    <div id="hellopreloader"><div id="hellopreloader_preload"></div>
+    <script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},0);};</script>
+    <script>
+        dragElement(document.getElementById("window"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // если присутствует, заголовок - это место, откуда вы перемещаете DIV:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // в противном случае переместите DIV из любого места внутри DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // получить положение курсора мыши при запуске:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // вызов функции при каждом перемещении курсора:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // вычислить новую позицию курсора:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // установите новое положение элемента:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // остановка перемещения при отпускании кнопки мыши:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+    </script>
+<script src="../../script/charmsbar.js"></script> </body>

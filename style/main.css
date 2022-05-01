@@ -1,0 +1,159 @@
+@font-face {
+    font-family: segoeui;
+    src: url(../fonts/segoeui.ttf);
+}
+
+@font-face {
+    font-family: segoeuil;
+    src: url(../fonts/segoeuil.ttf);
+}
+
+@font-face {
+    font-family: segoeuisl;
+    src: url(../fonts/segoeuisl.ttf);
+}
+
+@font-face {
+    font-family: segoeuib;
+    src: url(../fonts/segoeuib.ttf);
+}
+
+@font-face {
+    font-family: segoeuisb;
+    src: url(../fonts/seguisb.ttf);
+}
+
+/* Dropdown Button */
+.cb_dropbtn {
+    opacity: 0;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    width: 30px;
+    height: 30px;
+    top: 40px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.charmsbar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.cb_dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: rgb(17, 17, 17);
+    width: 106px;
+    height: 100vh;
+    z-index: 1;
+}
+
+.cb_dropdown-content div {
+    position: absolute;
+    top: 50%;
+    margin-top: -250px;
+    width: 106px;
+}
+
+/* Links inside the dropdown */
+.cb_dropdown-content div a {
+    height: 100px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.cb_dropdown-content div a:hover {background-color: rgb(43, 43, 43);}
+
+/* Show the dropdown menu on hover */
+.charmsbar:hover .cb_dropdown-content {
+    display: block;
+       
+}
+
+.hover_blue:hover i{
+    color:#5252fe;
+}
+
+
+.metroAppHeader {
+    animation-delay: 0.3s;
+    width: 100%;
+    top: -26px;
+    height: 26px;
+    background-color: rgb(17, 17, 17);
+    animation-duration: 0.3s;
+    animation-name: METRO_headerAni;
+    animation-timing-function: ease-out;
+    position: fixed;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+.metroAppHeader h6 {
+    font-size: 16;
+    font-family: 'segoeui';
+    color: white;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.METRO_close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+@keyframes METRO_headerAni {
+    0%   { transform: translateY(0px); }
+    100% { transform: translateY(26px); }
+}
+
+
+
+.nocursor {
+    cursor: none;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    cursor:default;
+}
+
+.charmsbar_settengs {
+    background-color: rgb(24, 0, 82);
+    width: 346px;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
+    z-index: 10;
+}
+
+.cb_panels_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    border: 5px solid black;
+  }
+  .cb_panel {
+    flex: 0 0 346px;
+    background-color: #FF9999;
+  }
+  .cb_bg{
+    flex: 1 1 25%;
+    background-color: #9999FF;
+  }

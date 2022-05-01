@@ -1,0 +1,60 @@
+@keyframes blackblue {
+	0% {
+        background-color: black
+    }
+	100% {
+        background-color: rgb(24, 0, 82);
+    }
+}
+
+body{
+    animation-name: blackblue;
+    animation-delay: 1.0s;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+.welcomeblock2 {
+    opacity: 0;
+    top: 40%;
+    left:50%;
+    position: absolute;
+    margin-top: -88px;
+    margin-left: -260px;
+    animation-name: welcomeaniIN;
+    animation-delay: 1s;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes welcomeaniIN {
+	0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+	100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.welcomeblock {
+    animation-name: welcomeaniOUT;
+    animation-delay: 5s;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes welcomeaniOUT {
+	0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+	100% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,56 @@
+@keyframes showani {
+    0% {
+        left: -200px;
+        opacity: 0;
+    }
+    100% {
+        left: 60px;
+        opacity: 1;
+    }
+}
+
+@keyframes logsshowani {
+    0% {
+        left: -200px;
+        opacity: 0;
+    }
+    100% {
+        left: 120px;
+        opacity: 1;
+    }
+}
+
+.headerlog {
+    position: absolute;
+    left: -200px;
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-name: showani;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.logs {
+    position: absolute;
+    top: 160px;
+    left: -200px;
+    opacity: 0;
+    animation-delay: 0.2s;
+    animation-duration: 0.4s;
+    animation-name: logsshowani;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.log h2 {
+    font-family: 'segoeuil';
+    font-size: 30px;
+    color: white;
+}
+
+.log h3 {
+    padding-right: 100px;
+    font-family: 'segoeui';
+    font-size: 24px;
+    color: white;
+}
