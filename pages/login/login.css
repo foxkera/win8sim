@@ -9,7 +9,7 @@
 
 body{
     animation-name: blackblue;
-    animation-delay: 1.0s;
+    animation-delay: 0.5s;
     animation-duration: 0.2s;
     animation-timing-function: ease;
     animation-fill-mode: forwards; 

@@ -8,76 +8,54 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="shortcut icon" href="images/logo.png">  
     
+    <title>Okna8</title>
 </head>
-<body style="background-color: black;">
-    <section class="nocursor" style="width: 100vw; height: 100wh;">
-        <div class="bootanimation">
-            <div class="verticalhorizontal">
-                <img src="img/logo.png" alt="" />
-                <div class="space"></div>
-                <img class="spinner" src="img/loading-windows.gif" alt="">
-            </div>
-        </div>
-    </section>
+<body style="overflow-x: hidden;  background-color: rgb(24, 0, 82);">
+    <div class="all" style="margin-top:30px; margin-left:60px; padding-right: 30px;">
+        <table>
+            <tr>
+                <td>
+                    <img src="img/logo2.png" alt="">
+                </td>
+                <td>
+                    <h1 style="font-family: 'segoeuil'; font-size: 80px; color: white;">Okna8</h1>
+                </td>
+            </tr>
+        </table>
+        <p style="font-family: 'segoeuil'; font-size: 20px; color: white; margin-top: 20px; margin-bottom: 0px;">Добро пожаловать в Okna8!</p>
+        <p style="font-family: 'segoeuil'; font-size: 20px; color: white; margin-top: 0px; margin-bottom: 0px;">Дизайн Okna8 основан на дизайне ОС Microsoft Windows 8 и пытается его копировать.</p>
+        <p style="font-family: 'segoeuil'; font-size: 20px; color: white; margin-top: 0px; margin-bottom: 0px;">Скопировать его идиально, разумеется, невозможно. У Windows 8 много сложных анимаций и тому подобных, одним словом, украшательств. Я - разработчик, делаю всё возможное, чтобы дизайн был максимально похож на оригинал.</p>
+        
+        
+        <a style="margin-top: 30px;" class="startbtn"><div style="margin-top: 30px; background-color:rgb(24, 24, 24); height: 40px; width: 120px; text-align: center; font-family: 'segoeuil'; font-size: 24px; color: white;">Запуск!</div></a>
+        
+        <h5 style="position: absolute;bottom: 0px;right: 0px;  font-family: 'segoeui'; font-size: 24px; color: white;">Версия 20220503 </h5>
+        <style>
+            .startani{
+                animation-fill-mode: forwards;
+                animation-duration: 0.2s;
+                animation-timing-function: ease;
+            }
 
-<style>
-.verticalhorizontal {
-    top: 50%;
-    position: absolute;
-    margin-top: -173px;
-    left: 50%;
-    margin-left: -190px;
-    animation-name: opacityani;
-    animation-delay: 7s;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards; 
-
-}
-
-.bootanimation{
-    animation-name: opacityani2;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards; 
-}
-.space {
-    height: 200px;
-}
-
-.spinner {
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    left: 50%;
-    margin-left: -16px;
-}
-
-@keyframes opacityani {
-	0% {
-        opacity: 1;
-    }
-	100% {
-        opacity: 0;
-    }
-}
-
-@keyframes opacityani2 {
-	0% {
-        opacity: 0;
-    }
-    99% {
-        opacity: 0;
-    }
-	100% {
-        opacity: 1;
-    }
-}
-</style>
-<script>
-var delay = 8000; /* 1 миллисекунда*/
-
-setTimeout(function(){
-    window.location.href = 'pages/login/login.html';
-}, delay);</script>
-<script src="../../script/charmsbar.js"></script> </body>
+            @keyframes startaniani {
+                100% {transform: translateX(100vw);}
+            }
+        </style>
+        
+    </div>
+    <script src="script/jquery-2.1.1.js"></script>
+    <script>
+        
+        if(localStorage.getItem('SuperSecretDebugSettengSkipIndexWelcomeScreen') == 'true') {
+            window.location.href = 'pages/bootscreen/boot.html'
+        }
+        $(function(){
+            $('.startbtn').click(function(){
+                $('.all').addClass('startani');
+                setTimeout(function(){
+                window.location.href = 'pages/bootscreen/boot.html'
+                },1000);
+            });
+        });
+    </script>
+</body>

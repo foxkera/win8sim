@@ -148,12 +148,12 @@ a {
     align-items: stretch;
     height: 100vh;
     border: 5px solid black;
-  }
-  .cb_panel {
+}
+.cb_panel {
     flex: 0 0 346px;
     background-color: #FF9999;
-  }
-  .cb_bg{
+}
+.cb_bg{
     flex: 1 1 25%;
     background-color: #9999FF;
-  }
+}
