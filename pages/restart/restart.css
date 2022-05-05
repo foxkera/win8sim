@@ -1,0 +1,59 @@
+.restartblock2 {
+    opacity: 0;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -58px;
+    animation-name: restartaniIN;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes restartaniIN {
+	0% {
+        opacity: 0;
+    }
+	100% {
+        opacity: 1;
+    }
+}
+
+.restartblock {
+    animation-name: restartaniOUT;
+    animation-delay: 4s;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes restartaniOUT {
+	0% {
+        opacity: 1;
+    }
+	100% {
+        opacity: 0;
+    }
+}
+
+.space {
+    width: 16px;
+}
+
+@keyframes blackbody {
+    0% {
+
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+body {
+    animation-name: blackbody;
+    animation-delay: 4s;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}

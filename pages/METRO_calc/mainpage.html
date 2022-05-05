@@ -13,8 +13,9 @@
     <title>Okna8</title>
 </head>
 <body style="background-color: rgb(29,29,29)" >
-    
+    <div class="metrosplash" id="metrosplash" style="background-color: rgb(0,138,0);"><img style="margin-top: -106px; margin-left: -81px;" src="splash.png" alt=""></div>
     <div class="metroAppHeader">
+        <img class="metroIcon" src="metro_header/icon.png" alt="">
         <h6>Калькулятор</h6>
         <a href="../start/startMenu.html"><img class="METRO_close" src="METRO_header/close.png" alt=""></a>
     </div>
@@ -53,4 +54,13 @@
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.4/math.js"></script>
     <script src="calc.js"></script>
+    <script src="../../script/jquery-2.1.1.js"></script>
+    <script>
+        window.onload = function(){
+            $('.metrosplash').addClass('metrosplashhideani');
+            setTimeout(function(){
+                $('.metrosplash').addClass('hidden')
+            },200)
+        }
+    </script>
 <script src="../../script/charmsbar.js"></script> </body>

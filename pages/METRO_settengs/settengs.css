@@ -1,0 +1,99 @@
+.leftpanel {
+    background-color: rgb(24, 0, 82);
+    height: 100vh;
+    width: 400px;
+    padding-top: 60px;
+}
+
+.settengsListItem{
+    font-size: 16px;
+    font-family: 'segoeuil';
+    color: white;
+}
+
+.settengsListItem div {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 46px;
+}
+
+.settengsListItem:hover div {
+    background-color: rgb(70, 23, 181);
+}
+
+.mainSection {
+    left: 400px;
+    position: absolute;
+    top: 60px;
+    padding-left: 62px;
+}
+
+.setteng_notlist_header {
+    color: rgb(111, 75, 198);
+    font-family: 'segoeuil';
+    font-size: 26px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.setteng_notlist_text {
+    color: black;
+    font-size: 16px;
+    padding-top: 23px;
+}
+
+td {
+    padding: 0px;
+}
+
+tr {
+    padding: 0px;
+}
+
+.metrobutton {
+    color: #000000;
+    background-color: #cccccc;
+    font-size: 16px;
+    border: 0px solid #2d63c8;
+    padding: 4px 16px;
+    cursor: pointer;
+    font-family:'segoeuisb';
+}
+.metrobutton:hover {
+    background-color: rgb(216, 216, 216);
+}
+
+.metrobutton:active {
+    background-color: #000000;
+    color: white;
+    border: 0px solid #2d63c8;
+    outline: none;
+}
+
+.metrowindow_pcrename {
+    height: 273px;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    margin-top: -136px;
+    background-color: rgb(31, 0, 104);
+    z-index: 4;
+}
+
+.metrowindow_bg {
+    opacity: 0.7;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+
+.metrowindow_pcrename div {
+    position: absolute;
+    left: 50%;
+    margin-left: -315px;
+    width: 630px;
+}

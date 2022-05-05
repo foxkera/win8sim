@@ -49,7 +49,12 @@
     var delay = 6000; /* 1 миллисекунда*/
 
     setTimeout(function(){
-    window.location.href = '../desktop/desktop.html';
+        if(localStorage.getItem('OpenStartscreenInsteadOfDesktop') == "true") {
+            window.location.href = '../start/startmenu.html';
+        } else {
+            window.location.href = '../desktop/desktop.html';
+        }
+    
     }, delay);
     </script>
 <script src="../../script/charmsbar.js"></script> </body>

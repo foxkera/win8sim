@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="restart.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    
+    <title>Okna8</title>
+</head>
+<body style="background-color: rgb(24, 0, 82);">
+    <section class="nocursor" style="width: 100vw; height: 100vh;">
+        <div class="restartblock2">
+            <div class="restartblock">
+                <table>
+                    <tr>
+                        <td>
+                            <img style="height: 30px; width: 30px;" src="../../img/loading-windows.gif" alt="">
+                        </td>
+                        <td>
+                            <div class="space"></div>
+                        </td>
+                        <td>
+                            <h1 style="font-family: 'segoeuil'; color: white; font-size: 20px; padding-top: 4px;">Перезагрузка</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        var delay = 5000; /* 1 миллисекунда*/
+    
+        setTimeout(function(){
+        window.location.href = '../bootscreen/boot.html';
+        }, delay);
+        </script>
+<script src="../../script/charmsbar.js"></script> </body>

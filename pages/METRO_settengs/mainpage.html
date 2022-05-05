@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    <link rel="stylesheet" href="settengs.css">
+    <link rel="stylesheet" href="../../font-awesome/css/font-awesome.css">
+    
+    <script src="../../script/jquery-2.1.1.js"></script>
+    <title>Okna8</title>
+</head>
+<body>
+    
+    <div class="metroAppHeader">
+        <img class="metroIcon" src="metro_header/icon.png" alt="">
+        <h6>Параметры</h6>
+        <a href="../start/startMenu.html"><img class="METRO_close" src="METRO_header/close.png" alt=""></a>
+    </div>
+    <div class="metrosplash" id="metrosplash" style="background-color: rgb(81,51,171);"><img style="margin-top: -106px; margin-left: -81px;" src="splash.png" alt=""></div>
+    <div class="leftpanel">
+        <H1 style="margin-left: 45px; margin-bottom: 22px;font-family: 'segoeuil'; font-size: 26px; color: white;">Параметры ПК</H1>
+        <a class="setteng_pcinfo">
+            <div class="settengsListItem">
+                <div>
+                    Сведения о компьютере
+                </div>
+                
+            </div>
+        </a>
+        <a class="setteng_personalization">
+            <div class="settengsListItem">
+                <div>
+                    Персонализация
+                </div>
+                
+            </div>
+        </a>
+    </div>
+    <div class="mainSection">
+         <div class="setteng_pcinfo_notlist">
+            <h1 class="setteng_notlist_header">Компьютер</h1>
+            <table>
+                <tr>
+                    <td>
+                        <h2 style="padding-right: 74px;" class="setteng_notlist_text">Имя компьютера</h2>
+                    </td>
+                    <td>
+                        <h2 class="setteng_notlist_text">
+                            <div id="PCNAME"></div>
+                        </h2>
+                    </td>
+                </tr>
+            </table>
+            <div class="metrobutton renamepcbtn" style="cursor: default;">Переименование компьютера</div>
+            <script>
+                document.getElementById("PCNAME").innerHTML = localStorage.getItem('SYSTEM_pcname')
+                $('.renamepcbtn').click(function(){
+                    $('.metrowindow_bg').removeClass('hidden');
+                    $('.metrowindow_pcrename').removeClass('hidden');
+                    document.getElementById("pcname2").innerHTML = 'Текущее имя компьютера: ' + localStorage.getItem('SYSTEM_pcname')
+                })
+            </script>
+         </div>
+    </div>
+    <div class="charmsbar">
+        <button class="cb_dropbtn"></button>
+        <div class="cb_dropdown-content">
+            <div>
+                <a href="../bsod/bsod.html">
+                    <img style="padding-left: 24px;padding-top: 16px;" src="../../img/charmsbar-search.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Поиск</p>
+                </a>
+                <a href="../bsod/bsod.html">
+                    <img style="padding-left: 31px;padding-top: 16px;" src="../../img/charmsbar-share.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Поделиться</p>
+                </a>
+                <a href="" class="hover_blue">
+                    <i style="font-size: 44px; padding-left: 32px; padding-top: 16px;" class="fa fa-windows" aria-hidden="true"></i>
+                    <p style="font-family: 'segoeuil'; text-align: center;">Пуск</p>
+                </a>
+                <a href="../bsod/bsod.html">
+                    <img style="padding-left: 33px;padding-top: 16px;" src="../../img/charmsbar-devices.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Устройства</p>
+                </a>
+                <a href="../METRO_settengs/mainpage.html" class="charmsbarBtn_settengs">
+                    <img style="padding-left: 34px;padding-top: 16px;" src="../../img/charmsbar-settengs.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Параметры</p>
+                </a>
+            </div>         
+        </div>
+      </div>
+    </div>
+    <div class="metrowindow_bg hidden"></div>
+    <div class="metrowindow_pcrename hidden">
+        <div>
+            <h1 style="font-size:28px;color:white;font-family:'segoeuil'; padding-top:20px">Переименуйте компьютер</h1>
+            <p style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:8px; margin-bottom: 13px;">Можно использовать сочетание букв, дефисов и цифр.</p>
+            <p style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:-3px; margin-bottom: 0px;"><div style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:-3px; margin-bottom: 0px;" id="pcname2"></div></p>
+            <input maxlength="32" style="margin-top: 32px;" class="pcrename_inputtext" id="textinput_newpcname" type="text">
+            <div style="margin-top:47px;">
+                <button class="metrobutton2" id="pcrename_nextbtn"  style="cursor: default; display:inline; margin-left: 439px;">Далее</button>
+                <button class="metrobutton2" id="pcrename_cancelbtn" style="cursor: default; display:inline; padding-left: 17px; padding-right: 17px;">Отмена</button>
+            </div>
+            <script>
+                function SetPcName () {
+                   var tempNewPcName = $('#textinput_newpcname').val();
+                   localStorage.setItem('SYSTEM_pcname', tempNewPcName);
+                }
+                $('#pcrename_nextbtn').click(function(){
+                    SetPcName ();
+                    window.location.href = 'mainpage.html';
+                })
+                $('#pcrename_cancelbtn').click(function(){
+                    $('.metrowindow_bg').addClass('hidden');
+                    $('.metrowindow_pcrename').addClass('hidden');
+                })
+            </script>
+        </div>
+        
+        <style>
+            .pcrename_inputtext {
+                width: 280px;
+                height: 32px;
+                background-color: rgb(210, 204, 225);
+                outline: none;
+                border: none;
+            }
+
+            .pcrename_inputtext:hover{
+                background-color: rgb(226, 222, 235);
+            }
+            .pcrename_inputtext:focus {
+                background-color: white;
+            }
+        </style>
+    </div>
+    <script src="../../script/charmsbar.js"></script>
+    <script src="script_settengslist.js"></script>
+    <script>
+        window.onload = function(){
+            $('.metrosplash').addClass('metrosplashhideani');
+            setTimeout(function(){
+                $('.metrosplash').addClass('hidden')
+            },200)
+        }
+    </script>
+</body>

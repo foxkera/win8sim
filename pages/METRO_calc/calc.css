@@ -12,6 +12,8 @@
   }
   
   .calculator {
+    position: absolute;
+    top: 70px;
     width: 340px;
     height: 480px;
   }

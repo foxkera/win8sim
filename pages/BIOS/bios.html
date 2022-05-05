@@ -5,8 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="style/icon-font.min.css">
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="../../style/main.css">
     <link rel="shortcut icon" href="images/logo.png">  
-    
+    <style>
+        @font-face {
+            font-family: "biosfont";
+            src: url(biosfont.ttf);
+        }
+
+        p{
+            color: white;
+        }
+        a{
+            color: fuchsia;
+            cursor: default;
+        }
+        a:hover{
+            color: aqua;
+        }
+        a:focus{
+            color: aqua;
+            outline: none;
+        }
+        td {
+            background-color: blue;
+            border-width: 2px;
+            border-color: aqua;
+        }
+    </style>
     <title>Okna8</title>
 </head>
+<body style="font-family: 'biosfont'; background-color: teal;"  >
+    <div style="width: 100vw; height: 28px; background-color: aqua; color: black;position: absolute; top: 0px;left: 0px;">
+        <p style="position:absolute; top: 50%; margin-top: -6px; left: 120px; color: black;">SUPER SECRET DEBUG SETTENGS</p>
+    </div>
+    <p style="margin-left: 120px; margin-top: 60px; color: white;">
+        These are test, debug settings of the Okna8 simulator. They are stored in localstorage.
+    </p>
+    <div style="margin-left: 120px; margin-top: 60px;color: white;">
+        <P style="margin-top: 20px;">BOOT TO...</P>
+        <ul>
+            <li>
+                <a href="../BOOTSCREEN/BOOT.html">Boot to systen</a>
+            </li>
+            <li>
+                <a href="../../index.html">Open welcome screen (index.html)</a>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-left: 120px; margin-top: 60px;color: white;">
+        <P style="margin-top: 20px;">BOOT SETTENGS</P>
+        <table>
+            <tr>
+                <td style="width: 500px;">
+                    Setteng
+                </td>
+                <td>
+                    State
+                </td>
+                <td>
+                    Description
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 500px;"><p>SuperSecretDebugSettengSkipIndexWelcomeScreen</p></td>
+                <td><a class="SuperSecretDebugSettengSkipIndexWelcomeScreenCheckbox"><p><div id="SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv">false</div></p></a></td>
+                <td style="width: 500px;"><p>Skips the welcome screen (index.html) and goes straight to loading.</p></td>
+            </tr>
+        </table>
+    </div>
+    <div style="margin-left: 120px; margin-top: 60px;color: white;">
+        <P style="margin-top: 20px;">PERSONALIZATION SETTENGS</P>
+        <table>
+            <tr>
+                <td style="width: 500px;">
+                    Setteng
+                </td>
+                <td>
+                    State
+                </td>
+                <td>
+                    Description
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 500px;"><p>rumode_active</p></td>
+                <td><a class="rumode_activecheckbox"><p><div id="rumode_activeStateDiv">false</div></p></a></td>
+                <td style="width: 500px;"><p>Enables Russian mode in Start screen.</p></td>
+            </tr>
+            <tr>
+                <td style="width: 500px;"><p>OpenStartscreenInsteadOfDesktop</p></td>
+                <td><a class="OpenStartscreenInsteadOfDesktopcheckbox"><p><div id="OpenStartscreenInsteadOfDesktopStateDiv">false</div></p></a></td>
+                <td style="width: 500px;"><p>The start screen will open instead of the desktop (like Windows 8 2012).</p></td>
+            </tr>
+            <tr>
+                <td style="width: 500px;"><p>desktopWallpaper</p></td>
+                <td><a class="desktopWallpapercheckbox"><p><div id="desktopWallpaperStateDiv">null</div></p></a></td>
+                <td style="width: 500px;"><p>Changes the background image of the desktop.</p></td>
+            </tr>
+        </table>
+    </div>
+    <script src="../../script/jquery-2.1.1.js"></script>
+    <script>
+        if (localStorage.getItem("SuperSecretDebugSettengSkipIndexWelcomeScreen") == "true") {
+            document.getElementById("SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv").innerHTML = "true"
+        }
+        $(function(){
+    $(".SuperSecretDebugSettengSkipIndexWelcomeScreenCheckbox").click(function(){
+        if (localStorage.getItem("SuperSecretDebugSettengSkipIndexWelcomeScreen") == "true") {
+            localStorage.setItem("SuperSecretDebugSettengSkipIndexWelcomeScreen", "false")
+            document.getElementById("SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv").innerHTML = "false"
+        } else {
+            localStorage.setItem("SuperSecretDebugSettengSkipIndexWelcomeScreen", "true")
+            document.getElementById("SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv").innerHTML = "true"
+        }
+            
+
+    });
+});
+        
+    </script>
+    <script>
+    if (localStorage.getItem("rumode_active") == "true") {
+        document.getElementById("rumode_activeStateDiv").innerHTML = "true"
+    }
+        $(".rumode_activecheckbox").click(function(){
+        if (localStorage.getItem("rumode_active") == "true") {
+            localStorage.setItem("rumode_active", "false")
+            document.getElementById("rumode_activeStateDiv").innerHTML = "false"
+        } else {
+            localStorage.setItem("rumode_active", "true")
+            document.getElementById("rumode_activeStateDiv").innerHTML = "true"
+        }
+            
+
+    });
+  
+  </script>
+  <script>
+      
+    if (localStorage.getItem("OpenStartscreenInsteadOfDesktop") == "true") {
+        document.getElementById("OpenStartscreenInsteadOfDesktopStateDiv").innerHTML = "true"
+    }
+        $(".OpenStartscreenInsteadOfDesktopcheckbox").click(function(){
+        if (localStorage.getItem("OpenStartscreenInsteadOfDesktop") == "true") {
+            localStorage.setItem("OpenStartscreenInsteadOfDesktop", "false")
+            document.getElementById("OpenStartscreenInsteadOfDesktopStateDiv").innerHTML = "false"
+        } else {
+            localStorage.setItem("OpenStartscreenInsteadOfDesktop", "true")
+            document.getElementById("OpenStartscreenInsteadOfDesktopStateDiv").innerHTML = "true"
+        }
+            
+
+    });
+  
+  </script>
+  <script>
+    if (localStorage.getItem("desktopWallpaper") == 'img1') {
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img2') {
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img3') {
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img4') {
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img5') {
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img6') {
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else {
+        localStorage.setItem("desktopWallpaper", null);
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    }
+        $(".desktopWallpapercheckbox").click(function(){
+        if (localStorage.getItem("desktopWallpaper") == 'img1') {
+    localStorage.setItem("desktopWallpaper", "img2");
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img2') {
+    localStorage.setItem("desktopWallpaper", "img3");
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img3') {
+    localStorage.setItem("desktopWallpaper", "img4");
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img4') {
+    localStorage.setItem("desktopWallpaper", "img5");
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img5') {
+    localStorage.setItem("desktopWallpaper", "img6");
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else if (localStorage.getItem("desktopWallpaper") == 'img6') {
+    localStorage.setItem("desktopWallpaper",null)
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    } else {
+        localStorage.setItem("desktopWallpaper", "img1");
+    document.getElementById("desktopWallpaperStateDiv").innerHTML =  localStorage.getItem("desktopWallpaper");
+    }
+    });
+  
+  </script>
+  <!---desktopWallpaper-->
+</body>

@@ -1,0 +1,34 @@
+.leftpanel {
+    align-self: flex-end;
+    animation-duration: 0.5s;
+    
+    background-color: rgb(1, 111, 193);
+    height: 10000px;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    width: 180px;
+    animation-name: leftpanelani;
+    animation-timing-function: ease;
+    position: fixed;
+    left: -180px;
+    animation-fill-mode: forwards;
+}
+@keyframes leftpanelani {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(180px); }
+}
+
+@keyframes mainani {
+    0%   { transform: translateX(0px); }
+    100% { transform: translateX(300px); }
+}
+
+.main {
+    padding-top: 26px;
+    left: -300px;
+    animation-duration: 0.5s;
+    animation-name: mainani;
+    animation-timing-function: ease;
+    position: fixed;
+    animation-fill-mode: forwards;
+}

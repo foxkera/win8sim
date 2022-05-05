@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../font-awesome/css/font-awesome.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    <link rel="stylesheet" href="store.css">
+    <!-- Подключаем CSS слайдера -->
+    <link rel="stylesheet" href="simple-adaptive-slider/css/simple-adaptive-slider.css">
+    <!-- Подключаем JS слайдера -->
+    <script defer src="simple-adaptive-slider/js/simple-adaptive-slider.js"></script>
+    <title>Okna8</title>
+</head>
+<body style="overflow: hidden;">
+    <script src="../../script/jquery-2.1.1.js"></script>
+    <div class="metroAppHeader">
+        <img class="metroIcon" src="metro_header/icon.png" alt="">
+        <h6>Магазин</h6>
+        <a href="../start/startMenu.html"><img class="METRO_close" src="METRO_header/close.png" alt=""></a>
+    </div>    
+    <div class="metrosplash" style="background-color: rgb(0,138,0);">
+        <img src="splash.png" alt="" style=" margin-left: -105px; margin-top: -119px;">
+    </div>
+    <!--<script>
+        //Проверить, выполнена ли настройка магазина
+        if(localStorage.getItem('storeSetup') != 1) {
+            var StoreSetupInProgress = 1
+            
+            setTimeout(function(){
+                $('.storeWelcome').removeClass('hidden');
+                $('.storeWelcome').addClass('storewelcomeani');
+                setTimeout(function(){
+                    $('.storewelcome_headertext').removeClass('hidden');
+                    setTimeout(function(){
+                        $('.storewelcome_text').removeClass('hidden');
+                        $('.howitworkbtn').removeClass('hidden');
+                        $('.startstorebtn').removeClass('hidden');
+                    },500);
+                },2000);
+            }, 1000);
+        } else if (localStorage.getItem('storeSetup') == 1) {
+            var StoreSetupInProgress = 0;
+            setTimeout(function(){
+            $('.mainStorePage').removeClass('hidden');
+            });
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            $('.metrosplash').addClass('metrosplashhideani');
+            setTimeout(function(){
+                $('.metrosplash').addClass('hidden')
+            },200);
+        }
+    </script>
+    <div class="storeWelcome hidden" style="background: url(csbg.png);">
+        <h1 class="storewelcome_headertext hidden" style="font-family: 'segoeuil'; color: white; font-size: 56px; top: 35px; left: 115px; margin-bottom: 53px; position: fixed;">Мир приложений</h1>
+        <h1 class="storewelcome_headertext hidden" style="font-family: 'segoeuisl'; color: white; font-size: 56px; top: 100px; left: 115px; margin-bottom: 53px; position: fixed;">Okna8</h1>
+        <p class="storewelcome_text hidden" style="font-family: 'segoeuisl'; color: white; font-size: 32px; top: 200px; left: 115px; margin-bottom: 53px; position: fixed; padding-right:100px;">
+            Здесь - место, где вы сможете добавлять в свою Okna8 новые интересные приложения. Каждый может легко создать своё и выложить сюда - это бесплано и просто.
+        </p>
+        <a class="howitworkbtn hidden" style="position: absolute; left: 120px; bottom: 300px; color: aquamarine;" href="howitwork/howitwork.html">Как это работает?</a>
+        <div class="startstorebtn metrobutton hidden" style="position: absolute; left: 120px; bottom: 200px; cursor: default;">Начать</div>
+    </div>
+    <script>
+        $('.startstorebtn').click(function(){
+            $('.storeWelcome').addClass('hidden');
+            $('.mainStorePage').removeClass('hidden');
+            StoreSetupInProgress = 0;
+            localStorage.setItem('storeSetup', 1);
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  // инициализация слайдера
+  new ItcSimpleSlider('.itcss', {
+    loop: true,
+    autoplay: true,
+    interval: 5000,
+    swipe: true,
+  });
+});
+
+    </script>
+    
+    <div class="mainStorePage hidden" style="background: url('mainbg.png'); width: 100vw; height: 100vh;">
+        <div class="storeheader">
+            <img class="storeHomepageBtn" src="homepagebtn.png" alt="">
+        </div>
+        <div class="storeContent">
+            <h1 style="font-family: 'segoeuil'; color: black; font-size: 38px; margin-bottom: 40px;">Магазин</h1>
+            <div class="bestapps">
+                <div class="itcss" style="position: absolute; left: 80px;">
+                    <div class="itcss__wrapper">
+                      <div class="itcss__items">
+                        <div class="itcss__item">
+                          <img src="bestapps/app1screenshot.png" alt="">
+                        </div>
+                        <div class="itcss__item">
+                          <img src="bestapps/app2screenshot.png" alt="">
+                        </div>
+                        <div class="itcss__item">
+                          <img src="bestapps/app3screenshot.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="bestapp">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+-->
+
+
+
+
+    <div class="charmsbar">
+        <button class="cb_dropbtn"></button>
+        <div class="cb_dropdown-content">
+            <div>
+                <a href="../bsod/bsod.html">
+                    <img style="padding-left: 24px;padding-top: 16px;" src="../../img/charmsbar-search.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Поиск</p>
+                </a>
+                <a href="../bsod/bsod.html">
+                    <img style="padding-left: 31px;padding-top: 16px;" src="../../img/charmsbar-share.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Поделиться</p>
+                </a>
+                <a href="" class="hover_blue">
+                    <i style="font-size: 44px; padding-left: 32px; padding-top: 16px;" class="fa fa-windows" aria-hidden="true"></i>
+                    <p style="font-family: 'segoeuil'; text-align: center;">Пуск</p>
+                </a>
+                <a href="../bsod/bsod.html">
+                    <img style="padding-left: 33px;padding-top: 16px;" src="../../img/charmsbar-devices.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Устройства</p>
+                </a>
+                <a href="../METRO_settengs/mainpage.html" class="charmsbarBtn_settengs">
+                    <img style="padding-left: 34px;padding-top: 16px;" src="../../img/charmsbar-settengs.png" alt="">
+                    <p style="font-family: 'segoeuil'; text-align: center;">Параметры</p>
+                </a>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    
+</body>

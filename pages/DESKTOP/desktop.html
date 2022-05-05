@@ -13,15 +13,42 @@
     <title>Okna8</title>
 </head>
 <body style="background-image: url(wallpapers/img0.jpg); background-repeat: no-repeat; background-size: 100vw 100vh;" >
-    <div class="taskpanel">
-        <a href="../start/startMenu.html" class="taskbar_startbutton">
-            <div class="startButtonOnDesktop">
-                <i style="position: absolute; font-size: 26px; left: 12px; bottom: 8px;" class="fa fa-windows" aria-hidden="true"></i>
-            </div>
+    <div class="taskpanel"></div>
+    <a href="../start/startMenu.html" class="taskbar_startbutton">
+      <div class="startButtonOnDesktop">
+          <i style="position: absolute; font-size: 28px; left: 12px; bottom: 7px;" class="fa fa-windows" aria-hidden="true"></i>
+      </div>
+  </a>
+    <div class="tray">
+      <div class="tray_icon" style="right:144px;">
+        <a href="">
+          <img src="tray/ethernet.png" alt="">
         </a>
-        
+      </div>
+      <div class="tray_icon tray_sound" style="right: 120px;">
+        <a>
+          <img src="tray/sound.png" alt="">
+        </a>
+      </div>
+      <div class="tray_langChooser">
+        <a>
+          <div id="keyboard_lang">
+            ENG
+          </div>
+        </a>
+      </div>
+      <div class="tray_datetime">
+        <div id="tray_time" class="tray_time">
+          <div id="tray_hours" style="display:inline;">00</div><div style="display:inline;">:</div><div id="tray_minutes" style="display:inline;">00</div>
+        </div>
+        <div id="tray_DaMoYe" class="tray_DaMoYe">
+          <div id="tray_date" style="display:inline;">00</div><div style="display:inline;">.</div><div id="tray_month" style="display:inline;">00</div><div style="display:inline;">.</div><div id="tray_year" style="display:inline;">0000</div>
+        </div>
+      </div>
     </div>
-    <!-- Перетаскиваемый DIV -->
+    <div class="soundwindow hidden">
+
+    </div>
     <div id="window">
     <!-- Включите заголовок DIV с тем же именем, что и перетаскиваемый DIV, а затем "header" -->
         <div id="windowHeader">Тестовое окно</div>
@@ -73,5 +100,37 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+    </script>
+    <script src="../../script/jquery-2.1.1.js"></script>
+    <script>
+      var fullDate = new Date();
+      setInterval(function(){
+        fullDate = new Date();
+        document.getElementById("tray_hours").innerHTML = fullDate.getHours();
+        document.getElementById("tray_minutes").innerHTML = fullDate.getMinutes();
+        document.getElementById("tray_date").innerHTML = fullDate.getDay() + 1;
+        document.getElementById("tray_month").innerHTML = fullDate.getMonth() + 1;
+        document.getElementById("tray_year").innerHTML = fullDate.getFullYear();
+      },100);
+    </script>
+    <script>
+      if(localStorage.getItem('desktopWallpaper') == 'img1') {
+        $('body').css('background-image', 'url(wallpapers/img1.jpg)');
+      } else if(localStorage.getItem('desktopWallpaper') == 'img2') {
+        $('body').css('background-image', 'url(wallpapers/img2.jpg)');
+      } else if(localStorage.getItem('desktopWallpaper') == 'img3') {
+        $('body').css('background-image', 'url(wallpapers/img3.jpg)');
+      } else if(localStorage.getItem('desktopWallpaper') == 'img4') {
+        $('body').css('background-image', 'url(wallpapers/img4.jpg)');
+      } else if(localStorage.getItem('desktopWallpaper') == 'img5') {
+        $('body').css('background-image', 'url(wallpapers/img5.jpg)');
+      } else if(localStorage.getItem('desktopWallpaper') == 'img6') {
+        $('body').css('background-image', 'url(wallpapers/img6.jpg)');
+      }
+    </script>
+    <script>
+      $('.tray_sound').click(function(){
+        $('.soundwindow').toggleClass('hidden')
+      })
     </script>
 <script src="../../script/charmsbar.js"></script> </body>
