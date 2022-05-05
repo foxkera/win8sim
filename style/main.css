@@ -86,34 +86,40 @@
 .metroAppHeader {
     animation-delay: 0.3s;
     width: 100%;
-    top: -26px;
-    height: 26px;
+    top: -29px;
+    height: 29px;
     background-color: rgb(17, 17, 17);
     animation-duration: 0.3s;
     animation-name: METRO_headerAni;
     animation-timing-function: ease-out;
     position: fixed;
     animation-fill-mode: forwards;
-    z-index: 1;
+    z-index: 99999;
 }
 
 .metroAppHeader h6 {
-    font-size: 16;
+    font-size: 12;
     font-family: 'segoeui';
     color: white;
-    padding-top: 2px;
+    padding-top: 4px;
     text-align: center;
 }
 
 .METRO_close {
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 2px;
+    top: 2px;
+}
+
+.metroIcon {
+    position: absolute;
+    left: 3px;
+    top: 2px;
 }
 
 @keyframes METRO_headerAni {
     0%   { transform: translateY(0px); }
-    100% { transform: translateY(26px); }
+    100% { transform: translateY(29px); }
 }
 
 
@@ -157,3 +163,81 @@ a {
     flex: 1 1 25%;
     background-color: #9999FF;
 }
+
+ .metrosplash {
+     width: 100vw;
+     height: 100vh;
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     z-index: 99998;
+ }
+
+ .metrosplash img {
+    position: absolute;
+    top:50%;
+    left: 50%;
+ }
+
+ .metrosplashhideani {
+    animation-name: metrosplashhideaniani;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+ }
+
+ @keyframes metrosplashhideaniani {
+    0%{opacity: 1;}
+     100%{opacity: 0;}
+ }
+
+ .metrobutton {
+    color: #000000;
+    font-size: 16px;
+    font-family: 'segoeuisl';
+    background: #cccccc;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .metrobutton:hover {
+    background: #707070;
+    text-decoration: none;
+  }
+
+  .metrobutton2 {
+    color: white;
+    font-size: 16px;
+    font-family: 'segoeui';
+    background: rgb(31, 0, 104);
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    border: 2px solid white;
+    
+  }
+  
+  .metrobutton2:hover {
+    background: rgb(60, 33, 124);
+    text-decoration: none;
+  }
+
+  .metrobutton2:focus {
+      outline: none;
+  }
+
+  .metrobutton2:active {
+      outline: none;
+      background-color: white;
+      color: black;
+  }
+
+  body{
+    user-select: none;
+  }
+
+  button{
+      cursor: default;
+  }
