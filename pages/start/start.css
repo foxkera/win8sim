@@ -1,0 +1,323 @@
+.bodyanimation {
+    background-color: rgb(24, 0, 82); 
+    animation-name: bodymainani;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+
+.loadani_ZAGLUSHKA {
+    background-color: rgb(24, 0, 82);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation-name: loadanizaglushkaani;
+    animation-delay: 0.7s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+}
+
+.all2 {
+    animation-name: all2ani;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+}
+
+
+@keyframes bodymainani {
+    0%   {background: url(startBackgrounds/2014_1.png) top left no-repeat;background-color: rgb(24, 0, 82); }
+    100% {background: url(startBackgrounds/2014_1.png) top right no-repeat;background-color: rgb(24, 0, 82); }
+}
+
+@keyframes loadanizaglushkaani {
+    0%  {opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.tiles {
+    margin-left: 120px;
+    margin-top: 72px;
+}
+
+.btn_down {
+    bottom: 38px;
+    margin-left: 120px;
+    position: fixed;
+}
+
+.btn_up {
+    bottom: 38px;
+    margin-left: 120px;
+    position: fixed;
+}
+
+
+
+.widetile:hover {
+    outline: 3px rgb(43, 6, 128) solid;
+}
+
+.standarttile {
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.standarttile:hover {
+    outline: 3px rgb(43, 6, 128) solid;
+}
+
+.widetile:active{
+    transform: scale(0.95,0.95);
+}
+
+.standarttile:active{
+    transform: scale(0.95,0.95);
+}
+
+.tilesSection1 {
+    opacity: 0;
+    position: fixed;
+    left: 120px;
+    animation-name: tilesSectionAni;
+    animation-delay: 0.5s ;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+    z-index: 1;
+}
+
+.tilesSection2 {
+    opacity: 0;
+    position: fixed;
+    left: 376px;
+    animation-name: tilesSectionAni;
+    animation-delay: 0.6s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+.tilesSection3 {
+    opacity: 0;
+    position: fixed;
+    left: 632px;
+    animation-name: tilesSectionAni;
+    animation-delay: 0.7s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes tilescontainerani {
+    0%   { opacity: 0; transform: scale(0.2,0.2) translatex(0px) translateY(-100px) rotateY(100deg) perspective(300px);}
+    100% { opacity: 1; transform: scale(1,1)     translatex(-700px)   translateY(0px) rotateY(0) perspective(0px);}
+}
+
+
+@keyframes allToTopAni {
+    0%   {transform: translateY(0);}
+    100% {transform: translateY(-100vh);}
+}
+
+@keyframes allToDownAni {
+    0%   {transform: translateY(-100vh);}
+    100% {transform: translateY(0px);}
+}
+
+@keyframes appsToTopAni {
+    0%   {transform: translateY(100vh);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes appsToDownAni {
+    0%   {transform: translateY(0vh);}
+    100% {transform: translateY(100vh);}
+}
+
+
+@keyframes hideallopendesktop {
+    0%   {transform: scale(1,1)}
+    100% {transform: scale(0.2,0.2); opacity: 0;}
+}
+
+.allHideTop {
+    animation-name: allToTopAni;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+    
+}
+
+.allShowDown {
+    animation-name: allToDownAni;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+    
+}
+
+.apps {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.appsHidedown {
+    animation-name: appsToDownAni;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+    
+}
+
+.appsShowtop {
+    animation-name: appsToTopAni;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+    
+}
+
+.desktopopen {
+    animation-name: hideallopendesktop;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+    
+}
+
+.startButtonOnDesktop {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 51px;
+    height: 40px;
+}
+
+.startButtonOnDesktop:hover {
+    background-color: rgb(17, 17, 17);
+}
+
+.startButtonOnDesktop i {
+    opacity: 0;
+}
+
+.startButtonOnDesktop:hover i {
+    opacity: 1;
+    color: rgb(70, 23, 181);
+}
+
+.rumode_on {
+    background: url(ru_start_picture.jpg) right top no-repeat;
+    background-color: rgb(0, 99, 255);
+}
+
+.rumode_btn:hover {
+    opacity: 0.5;
+}
+
+.tilescontainer {
+    opacity: 0;
+    position: absolute;
+    top: 172px;
+    left: 820px;
+    margin-bottom: 92px;
+    width: 1px;
+    height: calc(100vh - 204px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    animation-name: tilescontainerani;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+.tilescontainer::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+.tileInTilescontainer {
+    width: 248px;
+    height: 120px;
+    margin: 0;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.appscontainer {
+    position: absolute;
+    top: 135px;
+    left: 120px;
+    opacity: 0;
+    margin-bottom: 92px;
+    width: 1px;
+    height: calc(100vh - 204px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    animation-name: appscontainerani;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes appscontainerani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.appscontainer::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+.appInAppscontainer {
+    width: 283px;
+    height: 46px;
+    margin-bottom: 4px;
+    margin-right: 16px;
+}
+
+.appInAppscontainer {
+    padding: 3px;
+}
+
+.appInAppscontainer:hover{
+    background-color: rgb(43, 6, 128);
+}
+.appInAppscontainer img {
+    display: inline;
+}
+
+.appInAppscontainer p {
+    display: inline;
+    font-family: 'segoeuisl';
+    font-size: 12;
+    color: white;
+    padding-left: 10px;
+    cursor: default;
+}
+
+.categoryInAppscontainer {
+    color: rgb(150, 104, 255);
+    font-size: 26px;
+    width: 20px;
+    height: 46px;
+    margin-bottom: 4px;
+    margin-right: 16px;
+    padding-top: 11px;
+    font-family: 'segoeui';
+}

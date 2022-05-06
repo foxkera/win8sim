@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="simple-adaptive-slider/css/simple-adaptive-slider.css">
     <!-- Подключаем JS слайдера -->
     <script defer src="simple-adaptive-slider/js/simple-adaptive-slider.js"></script>
+
+    <script>
+        //Ставим интервал выполнения                                
+            setInterval(function(){ 
+        //находим теги img и ставим атрибуты    
+            $('img').attr({
+               "ondrag":"return false",
+               "ondragdrop":"return false",
+               "ondragstart":"return false"
+            })
+        //выполняем каждые 0,3 сек
+        }, 300);
+        </script>
     <title>Okna8</title>
 </head>
 <body style="overflow: hidden;">
@@ -25,7 +38,7 @@
     <div class="metrosplash" style="background-color: rgb(0,138,0);">
         <img src="splash.png" alt="" style=" margin-left: -105px; margin-top: -119px;">
     </div>
-    <!--<script>
+    <script>
         //Проверить, выполнена ли настройка магазина
         if(localStorage.getItem('storeSetup') != 1) {
             var StoreSetupInProgress = 1
@@ -110,17 +123,186 @@
                     </div>
                   </div>
             </div>
-            <div class="bestapp">
+            <div class="appsSection">
+                <div class="appInMainPage igor2677-pcinfoapp_inmainscreen">
+                    <img src="appsResources/icns/igor2677-pcinfoapp-icon150x150.png" alt="">
+                    <h3>PC info</h3>
+                    <h3>by igor2677</h3>
+                    <h4>Система</h4>
+                </div>
+                <div class="appInMainPage igor2677-changelogapp_inmainscreen">
+                    <img src="appsResources/icns/igor2677-changelogapp-icon150x150.png" alt="">
+                    <h3>Changelog</h3>
+                    <h3>by igor2677</h3>
+                    <h4>Новости</h4>
+                </div>
+                <div class="appInMainPage nerok-2048app_inmainscreen">
+                    <img src="appsResources/icns/nerok-2048app-icon150x150.png" alt="">
+                    <h3>2048</h3>
+                    <h3>by Nerok</h3>
+                    <h4>Игра</h4>
+                </div>
+            </div>
+            <script>
+                $('.igor2677-pcinfoapp_inmainscreen').click(function(){
+                    $('.storeContent').addClass('storeContentHide');
+                        $('.appPage_igor2677-pcinfo').removeClass('hidden');
+                        $('.appPage_igor2677-pcinfo').addClass('appPageShow');
+                    setTimeout(function(){
+                        $('.storeContent').removeClass('storeContentHide');
+                        $('.storeContent').addClass('hidden');
+                    },200);
+                })
+                $('.igor2677-changelogapp_inmainscreen').click(function(){
+                    $('.storeContent').addClass('storeContentHide');
+                        $('.appPage_igor2677-changelog').removeClass('hidden');
+                        $('.appPage_igor2677-changelog').addClass('appPageShow');
+                    setTimeout(function(){
+                        $('.storeContent').removeClass('storeContentHide');
+                        $('.storeContent').addClass('hidden');
+                    },200);
+                })
+                $('.nerok-2048app_inmainscreen').click(function(){
+                    $('.storeContent').addClass('storeContentHide');
+                        $('.appPage_nerok-2048').removeClass('hidden');
+                        $('.appPage_nerok-2048').addClass('appPageShow');
+                    setTimeout(function(){
+                        $('.storeContent').removeClass('storeContentHide');
+                        $('.storeContent').addClass('hidden');
+                    },200);
+                })
+            </script>
+        </div>
+        <div>  <!--    Контейнер, в котором находятся страницы всех приложений     -->
+            <div class="appPage appPage_igor2677-pcinfo hidden">
+                <div style="margin-left: 40px; margin-top: 28px;"><div class="backtoMainpageBtn_igor2677-pcinfo"><img src="backtomainpage.png" alt=""></div><h1 style="position: absolute;margin-left: 44px; top:-8px;font-family: 'segoeuil'; font-size: 34px;">PC info</h1></div>
+                <div class="installBtn hidden installBtn_igor2677-pcinfo">Установить</div>
+                <div class="installBtn hidden deleteBtn_igor2677-pcinfo">Удалить</div>
+                <div style="position: absolute; top: 80px; left: 510px;"><img src="appsresources/screenshots/igor2677-pcinfo/screenshot1.png" alt=""></div>
+                <script>
+                    if (localStorage.getItem('igor2677-pcinfo_installstate') == 1) {
+                        $('.deleteBtn_igor2677-pcinfo').removeClass('hidden');
+                    } else {
+                        $('.installBtn_igor2677-pcinfo').removeClass('hidden')
+                    }
 
+                    $('.installBtn_igor2677-pcinfo').click(function(){
+                        var temp_AppForInstall = 'igor2677-pcinfo';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется установка приложения "PC info"';
+                        setTimeout(function(){
+                        localStorage.setItem('igor2677-pcinfo_installstate',1);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+
+                    $('.deleteBtn_igor2677-pcinfo').click(function(){
+                        var temp_AppForInstall = 'igor2677-pcinfo';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется удаление приложения "PC info"';
+                        setTimeout(function(){
+                        localStorage.setItem('igor2677-pcinfo_installstate',0);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+                </script>
+            </div>
+            <div class="appPage appPage_igor2677-changelog hidden">
+                <div style="margin-left: 40px; margin-top: 28px;"><div class="backtoMainpageBtn_igor2677-changelog"><img src="backtomainpage.png" alt=""></div><h1 style="position: absolute;margin-left: 44px; top:-8px;font-family: 'segoeuil'; font-size: 34px;">Changelog</h1></div>
+                <div class="installBtn hidden installBtn_igor2677-changelog">Установить</div>
+                <div class="installBtn hidden deleteBtn_igor2677-changelog">Удалить</div>
+                <div style="position: absolute; top: 80px; left: 510px;"><img src="appsresources/screenshots/igor2677-changelog/screenshot1.png" alt=""></div>
+                <script>
+                    if (localStorage.getItem('igor2677-changelog_installstate') == 1) {
+                        $('.deleteBtn_igor2677-changelog').removeClass('hidden');
+                    } else {
+                        $('.installBtn_igor2677-changelog').removeClass('hidden')
+                    }
+
+                    $('.installBtn_igor2677-changelog').click(function(){
+                        var temp_AppForInstall = 'igor2677-changelog';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется установка приложения "Changelog"';
+                        setTimeout(function(){
+                        localStorage.setItem('igor2677-changelog_installstate',1);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+
+                    $('.deleteBtn_igor2677-changelog').click(function(){
+                        var temp_AppForInstall = 'igor2677-changelog';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется удаление приложения "Changelog"';
+                        setTimeout(function(){
+                        localStorage.setItem('igor2677-changelog_installstate',0);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+                </script>
+            </div>
+            <div class="appPage appPage_nerok-2048 hidden">
+                <div style="margin-left: 40px; margin-top: 28px;"><div class="backtoMainpageBtn_nerok-2048"><img src="backtomainpage.png" alt=""></div><h1 style="position: absolute;margin-left: 44px; top:-8px;font-family: 'segoeuil'; font-size: 34px;">2048</h1></div>
+                <div class="installBtn hidden installBtn_nerok-2048">Установить</div>
+                <div class="installBtn hidden deleteBtn_nerok-2048">Удалить</div>
+                <div style="position: absolute; top: 80px; left: 510px;"><img src="appsresources/screenshots/nerok-2048/screenshot1.png" alt=""></div>
+                <script>
+                    if (localStorage.getItem('nerok-2048_installstate') == 1) {
+                        $('.deleteBtn_nerok-2048').removeClass('hidden');
+                    } else {
+                        $('.installBtn_nerok-2048').removeClass('hidden')
+                    }
+
+                    $('.installBtn_nerok-2048').click(function(){
+                        var temp_AppForInstall = 'nerok-2048';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется установка приложения "2048"';
+                        setTimeout(function(){
+                        localStorage.setItem('nerok-2048_installstate',1);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+
+                    $('.deleteBtn_nerok-2048').click(function(){
+                        var temp_AppForInstall = 'nerok-2048';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется удаление приложения "2048"';
+                        setTimeout(function(){
+                        localStorage.setItem('nerok-2048_installstate',0);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+                </script>
             </div>
         </div>
     </div>
+    <div class="metrowindow_installprogress">
+        <div class="metrowindow_bg hidden"></div>
+    <div class="metrowindow_installprogressWin hidden">
+        <div>
+            <h1 style="font-size:28px;color:white;font-family:'segoeuil'; padding-top:20px">Установка приложения</h1>
+            <p style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:8px; margin-bottom: 13px;"><div style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:-3px; margin-bottom: 0px;" id="installApp_nameOfAppForInstall"></div></p>
+            <p style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:-3px; margin-bottom: 0px;"></p>
+            <div style="margin-top:47px;">
+                <button class="hidden metrobutton2" id="appinstall_restartbtn"  style=" cursor: default; margin-left: 339px;">Перезагрузить</button>
+            </div>
+            <script>
+                
+            </script>
+        </div>
+    </div>
+
+    
 
 
 
 
 
--->
 
 
 
@@ -154,5 +336,35 @@
         </div>
       </div>
     </div>
+
+    <script>
+        $('.backtoMainpageBtn_igor2677-pcinfo').click(function(){
+            $('.storeContent').addClass('storeContentShow');
+            $('.storeContent').removeClass('hidden');
+            $('.appPage_igor2677-pcinfo').addClass('appPageHide');
+            setTimeout(function(){
+                $('.appPage_igor2677-pcinfo').addClass('hidden');
+                $('.appPage_igor2677-pcinfo').removeClass('appPageHide');
+            },200);
+        });
+        $('.backtoMainpageBtn_igor2677-changelog').click(function(){
+            $('.storeContent').addClass('storeContentShow');
+            $('.storeContent').removeClass('hidden');
+            $('.appPage_igor2677-changelog').addClass('appPageHide');
+            setTimeout(function(){
+                $('.appPage_igor2677-changelog').addClass('hidden');
+                $('.appPage_igor2677-changelog').removeClass('appPageHide');
+            },200);
+        })
+        $('.backtoMainpageBtn_nerok-2048').click(function(){
+            $('.storeContent').addClass('storeContentShow');
+            $('.storeContent').removeClass('hidden');
+            $('.appPage_nerok-2048').addClass('appPageHide');
+            setTimeout(function(){
+                $('.appPage_nerok-2048').addClass('hidden');
+                $('.appPage_nerok-2048').removeClass('appPageHide');
+            },200);
+        })
+    </script>
     
 </body>
