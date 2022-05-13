@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+        <title> Создание Windows-подобного интерфейса при помощи jQuery UI </title>
+		<link rel="stylesheet" href="../../style/bootstrap.min.css">
+		<link rel="stylesheet" href="../../style/icon-font.min.css">
+		<link rel="stylesheet" href="../../style/main.css">
+		<link rel="stylesheet" href="../../font-awesome/css/font-awesome.css">
+		<link rel="shortcut icon" href="images/logo.png">  
+		<link rel="stylesheet" href="desktop.css">
+        <!-- Подключаем jQuery UI CSS -->
+        <link rel="stylesheet" href="css/flick/jquery-ui-1.9.2.custom.css" type="text/css" />
+        <!--Подключаем сначала jQuery затем уже jQuery UI! -->
+        <script src="js/jquery-1.8.3.js"></script>
+        <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+	    <script src="js/script.js"></script>
+   </head>
+   <body style="background-image: url(wallpapers/img0.jpg); background-repeat: no-repeat; background-size: 100vw 100vh; overflow: hidden;">
+		<div id="dialog_window_1" class="dialog_window" title="Проводник" style="cursor: default;">
+			<iframe style="width:100%; height:100%;" src="../CLASSICAPPS/okna_desktop_explorer/EXPLORER.html" frameborder="0"></iframe>
+	 	</div>
+		 <div class="taskpanel"></div>
+    <a href="../start/startMenu.html" class="taskbar_startbutton">
+      <div class="startButtonOnDesktop">
+          <i style="position: absolute; font-size: 28px; left: 12px; bottom: 7px;" class="fa fa-windows" aria-hidden="true"></i>
+      </div>
+  </a>
+  <div class="tray">
+      <div class="tray_icon" style="right:144px;">
+        <a href="">
+          <img src="tray/ethernet.png" alt="">
+        </a>
+      </div>
+      <div class="tray_icon tray_sound" style="right: 120px;">
+        <a>
+          <img src="tray/sound.png" alt="">
+        </a>
+      </div>
+      <div class="tray_langChooser">
+        <a>
+          <div id="keyboard_lang">
+            ENG
+          </div>
+        </a>
+      </div>
+      <div class="tray_datetime">
+        <div id="tray_time" class="tray_time">
+          <div id="tray_hours" style="display:inline;">00</div><div style="display:inline;">:</div><div id="tray_minutes" style="display:inline;">00</div>
+        </div>
+        <div id="tray_DaMoYe" class="tray_DaMoYe">
+          <div id="tray_date" style="display:inline;">00</div><div style="display:inline;">.</div><div id="tray_month" style="display:inline;">00</div><div style="display:inline;">.</div><div id="tray_year" style="display:inline;">0000</div>
+        </div>
+      </div>
+    </div>
+    <div class="soundwindow hidden">
+
+    </div>
+    <div class="startopenani"></div>
+    <div id="hellopreloader"><div id="hellopreloader_preload"></div>
+    <script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},0);};</script>
+    <script>
+		var fullDate = new Date();
+		setInterval(function(){
+		  fullDate = new Date();
+		  document.getElementById("tray_hours").innerHTML = fullDate.getHours();
+		  document.getElementById("tray_minutes").innerHTML = fullDate.getMinutes();
+		  document.getElementById("tray_date").innerHTML = fullDate.getDay() + 1;
+		  document.getElementById("tray_month").innerHTML = fullDate.getMonth() + 1;
+		  document.getElementById("tray_year").innerHTML = fullDate.getFullYear();
+		},100);
+	  </script>
+	  <script>
+		if(localStorage.getItem('desktopWallpaper') == 'img1') {
+		  $('body').css('background-image', 'url(wallpapers/img1.jpg)');
+		} else if(localStorage.getItem('desktopWallpaper') == 'img2') {
+		  $('body').css('background-image', 'url(wallpapers/img2.jpg)');
+		} else if(localStorage.getItem('desktopWallpaper') == 'img3') {
+		  $('body').css('background-image', 'url(wallpapers/img3.jpg)');
+		} else if(localStorage.getItem('desktopWallpaper') == 'img4') {
+		  $('body').css('background-image', 'url(wallpapers/img4.jpg)');
+		} else if(localStorage.getItem('desktopWallpaper') == 'img5') {
+		  $('body').css('background-image', 'url(wallpapers/img5.jpg)');
+		} else if(localStorage.getItem('desktopWallpaper') == 'img6') {
+		  $('body').css('background-image', 'url(wallpapers/img6.jpg)');
+		}
+	  </script>
+	  <script>
+		$('.tray_sound').click(function(){
+		  $('.soundwindow').toggleClass('hidden')
+		})
+	  </script>
+  <script src="../../script/charmsbar.js"></script> 
+    </body>
+</html>
