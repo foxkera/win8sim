@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>debug</title>
+    <link rel="stylesheet" href="EXPLORER.css">
+    <link rel="stylesheet" href="../../../style/main.css">
+</head>
+<body>
+    <div class="okna_desktop_explorer">
+        <div class="ribbon">
+            <div class="ribbon_selector">
+                <div class="ribbon_btn_file"><p class="ribbon_btn_file_text">Файл</p></div>
+                <div id="ribbon_btn_computer" class="ribbon_btn_computer_active"><p class="ribbon_btn_computer_text">Компьютер</p></div>
+                <div id="ribbon_btn_view" class="ribbon_btn_view"><p class="ribbon_btn_view_text">Вид</p></div>
+            </div>
+            <div class="ribbon_content">
+                <div class="ribbon_content_computer">
+
+                </div>
+                <div class="ribbon_content_view hidden">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../script/jquery-2.1.1.js"></script>
+    <script>
+
+        $('#ribbon_btn_computer').click(function(){
+            $('#ribbon_btn_computer').addClass('ribbon_btn_computer_active');
+            $('#ribbon_btn_computer').removeClass('ribbon_btn_computer');
+            $('#ribbon_btn_view').addClass('ribbon_btn_view');
+            $('#ribbon_btn_view').removeClass('ribbon_btn_view_active');
+            $('.ribbon_content_computer').removeClass('hidden')
+            $('.ribbon_content_view').addClass('hidden')
+        });
+        $('#ribbon_btn_view').click(function(){
+            $('#ribbon_btn_view').addClass('ribbon_btn_view_active');
+            $('#ribbon_btn_view').removeClass('ribbon_btn_view');
+            $('#ribbon_btn_computer').removeClass('ribbon_btn_computer_active');
+            $('#ribbon_btn_computer').addClass('ribbon_btn_computer');
+            $('.ribbon_content_computer').addClass('hidden')
+            $('.ribbon_content_view').removeClass('hidden')
+        });
+    </script>
+</body>

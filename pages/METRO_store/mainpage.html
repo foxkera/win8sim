@@ -124,6 +124,12 @@
                   </div>
             </div>
             <div class="appsSection">
+                <div class="appInMainPage igor2677-oknaapp_inmainscreen">
+                    <img src="appsResources/icns/igor2677-oknaapp-icon150x150.png" alt="">
+                    <h3>Okna8</h3>
+                    <h3>by igor2677</h3>
+                    <h4>Симулятор</h4>
+                </div>
                 <div class="appInMainPage igor2677-pcinfoapp_inmainscreen">
                     <img src="appsResources/icns/igor2677-pcinfoapp-icon150x150.png" alt="">
                     <h3>PC info</h3>
@@ -140,6 +146,18 @@
                     <img src="appsResources/icns/nerok-2048app-icon150x150.png" alt="">
                     <h3>2048</h3>
                     <h3>by Nerok</h3>
+                    <h4>Игра</h4>
+                </div>
+                <div class="appInMainPage nerok-tetrisapp_inmainscreen">
+                    <img src="appsResources/icns/nerok-tetrisapp-icon150x150.png" alt="">
+                    <h3>Tetris</h3>
+                    <h3>by Nerok</h3>
+                    <h4>Игра</h4>
+                </div>
+                <div class="appInMainPage fleenyt-autosimuapp_inmainscreen">
+                    <img src="appsResources/icns/fleenyt-autosimuapp-icon150x150.png" alt="">
+                    <h3>Auto simulator</h3>
+                    <h3>by FleenYT</h3>
                     <h4>Игра</h4>
                 </div>
             </div>
@@ -166,6 +184,33 @@
                     $('.storeContent').addClass('storeContentHide');
                         $('.appPage_nerok-2048').removeClass('hidden');
                         $('.appPage_nerok-2048').addClass('appPageShow');
+                    setTimeout(function(){
+                        $('.storeContent').removeClass('storeContentHide');
+                        $('.storeContent').addClass('hidden');
+                    },200);
+                })
+                $('.nerok-tetrisapp_inmainscreen').click(function(){
+                    $('.storeContent').addClass('storeContentHide');
+                        $('.appPage_nerok-tetris').removeClass('hidden');
+                        $('.appPage_nerok-tetris').addClass('appPageShow');
+                    setTimeout(function(){
+                        $('.storeContent').removeClass('storeContentHide');
+                        $('.storeContent').addClass('hidden');
+                    },200);
+                })
+                $('.igor2677-oknaapp_inmainscreen').click(function(){
+                    $('.storeContent').addClass('storeContentHide');
+                        $('.appPage_igor2677-okna').removeClass('hidden');
+                        $('.appPage_igor2677-okna').addClass('appPageShow');
+                    setTimeout(function(){
+                        $('.storeContent').removeClass('storeContentHide');
+                        $('.storeContent').addClass('hidden');
+                    },200);
+                })
+                $('.fleenyt-autosimuapp_inmainscreen').click(function(){
+                    $('.storeContent').addClass('storeContentHide');
+                        $('.appPage_fleenyt-autosimu').removeClass('hidden');
+                        $('.appPage_fleenyt-autosimu').addClass('appPageShow');
                     setTimeout(function(){
                         $('.storeContent').removeClass('storeContentHide');
                         $('.storeContent').addClass('hidden');
@@ -279,6 +324,111 @@
                     });
                 </script>
             </div>
+            <div class="appPage appPage_nerok-tetris hidden">
+                <div style="margin-left: 40px; margin-top: 28px;"><div class="backtoMainpageBtn_nerok-tetris"><img src="backtomainpage.png" alt=""></div><h1 style="position: absolute;margin-left: 44px; top:-8px;font-family: 'segoeuil'; font-size: 34px;">Tetris</h1></div>
+                <div class="installBtn hidden installBtn_nerok-tetris">Установить</div>
+                <div class="installBtn hidden deleteBtn_nerok-tetris">Удалить</div>
+                <div style="position: absolute; top: 80px; left: 510px;"><img src="appsresources/screenshots/nerok-tetris/screenshot1.png" alt=""></div>
+                <script>
+                    if (localStorage.getItem('nerok-tetris_installstate') == 1) {
+                        $('.deleteBtn_nerok-tetris').removeClass('hidden');
+                    } else {
+                        $('.installBtn_nerok-tetris').removeClass('hidden')
+                    }
+
+                    $('.installBtn_nerok-tetris').click(function(){
+                        var temp_AppForInstall = 'nerok-tetris';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется установка приложения "Tetris"';
+                        setTimeout(function(){
+                        localStorage.setItem('nerok-tetris_installstate',1);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+
+                    $('.deleteBtn_nerok-tetris').click(function(){
+                        var temp_AppForInstall = 'nerok-tetris';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется удаление приложения "Tetris"';
+                        setTimeout(function(){
+                        localStorage.setItem('nerok-tetris_installstate',0);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+                </script>
+            </div>
+            <div class="appPage appPage_igor2677-okna hidden">
+                <div style="margin-left: 40px; margin-top: 28px;"><div class="backtoMainpageBtn_igor2677-okna"><img src="backtomainpage.png" alt=""></div><h1 style="position: absolute;margin-left: 44px; top:-8px;font-family: 'segoeuil'; font-size: 34px;">Okna8</h1></div>
+                <div class="installBtn hidden installBtn_igor2677-okna">Установить</div>
+                <div class="installBtn hidden deleteBtn_igor2677-okna">Удалить</div>
+                <div style="position: absolute; top: 80px; left: 510px;"><img src="appsresources/screenshots/igor2677-okna/screenshot1.png" alt=""></div>
+                <script>
+                    if (localStorage.getItem('igor2677-okna_installstate') == 1) {
+                        $('.deleteBtn_igor2677-okna').removeClass('hidden');
+                    } else {
+                        $('.installBtn_igor2677-okna').removeClass('hidden')
+                    }
+
+                    $('.installBtn_igor2677-okna').click(function(){
+                        var temp_AppForInstall = 'igor2677-okna';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется установка приложения "Okna8"';
+                        setTimeout(function(){
+                        localStorage.setItem('igor2677-okna_installstate',1);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+
+                    $('.deleteBtn_igor2677-okna').click(function(){
+                        var temp_AppForInstall = 'igor2677-okna';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется удаление приложения "Okna8"';
+                        setTimeout(function(){
+                        localStorage.setItem("igor2677-okna_installstate',0");
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+                </script>
+            </div>
+            <div class="appPage appPage_fleenyt-autosimu hidden">
+                <div style="margin-left: 40px; margin-top: 28px;"><div class="backtoMainpageBtn_fleenyt-autosimu"><img src="backtomainpage.png" alt=""></div><h1 style="position: absolute;margin-left: 44px; top:-8px;font-family: 'segoeuil'; font-size: 34px;">Auto simulator</h1></div>
+                <div class="installBtn hidden installBtn_fleenyt-autosimu">Установить</div>
+                <div class="installBtn hidden deleteBtn_fleenyt-autosimu">Удалить</div>
+                <div style="position: absolute; top: 80px; left: 510px;"><img src="appsresources/screenshots/fleenyt-autosimu/screenshot1.png" alt=""></div>
+                <script>
+                    if (localStorage.getItem('fleenyt-autosimu_installstate') == 1) {
+                        $('.deleteBtn_fleenyt-autosimu').removeClass('hidden');
+                    } else {
+                        $('.installBtn_fleenyt-autosimu').removeClass('hidden')
+                    }
+
+                    $('.installBtn_fleenyt-autosimu').click(function(){
+                        var temp_AppForInstall = 'fleenyt-autosimu';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется установка приложения "Auto simulator"';
+                        setTimeout(function(){
+                        localStorage.setItem('fleenyt-autosimu_installstate',1);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+
+                    $('.deleteBtn_fleenyt-autosimu').click(function(){
+                        var temp_AppForInstall = 'fleenyt-autosimu';
+                        $('.metrowindow_bg').removeClass('hidden');
+                        $('.metrowindow_installprogressWin').removeClass('hidden');
+                        document.getElementById("installApp_nameOfAppForInstall").innerHTML = 'Выполняется удаление приложения "Auto simulator"';
+                        setTimeout(function(){
+                        localStorage.setItem("fleenyt-autosimu_installstate",0);
+                            window.location.href = '../restart/restart.html';
+                        },2000);
+                    });
+                </script>
+            </div>
         </div>
     </div>
     <div class="metrowindow_installprogress">
@@ -363,6 +513,33 @@
             setTimeout(function(){
                 $('.appPage_nerok-2048').addClass('hidden');
                 $('.appPage_nerok-2048').removeClass('appPageHide');
+            },200);
+        })
+        $('.backtoMainpageBtn_nerok-tetris').click(function(){
+            $('.storeContent').addClass('storeContentShow');
+            $('.storeContent').removeClass('hidden');
+            $('.appPage_nerok-tetris').addClass('appPageHide');
+            setTimeout(function(){
+                $('.appPage_nerok-tetris').addClass('hidden');
+                $('.appPage_nerok-tetris').removeClass('appPageHide');
+            },200);
+        })
+        $('.backtoMainpageBtn_igor2677-okna').click(function(){
+            $('.storeContent').addClass('storeContentShow');
+            $('.storeContent').removeClass('hidden');
+            $('.appPage_igor2677-okna').addClass('appPageHide');
+            setTimeout(function(){
+                $('.appPage_igor2677-okna').addClass('hidden');
+                $('.appPage_igor2677-okna').removeClass('appPageHide');
+            },200);
+        })
+        $('.backtoMainpageBtn_fleenyt-autosimu').click(function(){
+            $('.storeContent').addClass('storeContentShow');
+            $('.storeContent').removeClass('hidden');
+            $('.appPage_fleenyt-autosimu').addClass('appPageHide');
+            setTimeout(function(){
+                $('.appPage_fleenyt-autosimu').addClass('hidden');
+                $('.appPage_fleenyt-autosimu').removeClass('appPageHide');
             },200);
         })
     </script>

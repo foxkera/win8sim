@@ -1,0 +1,137 @@
+.ribbon {
+    font-family: 'segoeui';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 116px;
+    width: 100vw;
+    background-color: black;
+}
+
+.ribbon_selector {
+    position: absolute;
+    top: 0px;
+    height: 23px;
+    width: 100vw;
+    background-color: white;
+}
+
+.ribbon_btn_file {
+    position: fixed;
+    top:0px;
+    left: 0px;
+    background-color: rgb(25, 121, 202);
+    width: 56px;
+    height: 23px;
+}
+
+.ribbon_btn_file_text {
+    margin-top: 0px;
+    padding-top: 3px;
+    font-size: 12px;
+    color: white;
+    padding-left: 14px;
+}
+
+.ribbon_btn_computer {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    width: 87px;
+    height: 22px;
+    position: fixed;
+    top: 0px;
+    left: 56px;
+    margin-top: 0px;
+
+    transition: ease 0.2s;
+}
+
+.ribbon_btn_computer_active {
+    border-top: 1px solid rgb(218, 218, 218);
+    border-left: 1px solid rgb(218, 218, 218);
+    border-right: 1px solid rgb(218, 218, 218);
+    width: 87px;
+    height: 22px;
+    position: fixed;
+    top: 0px;
+    left: 56px;
+    margin-top: 0px;
+    background-color: rgb(245, 245, 245);
+    transition: ease 0.1s;
+}
+
+.ribbon_btn_computer:hover {
+    border-top: 1px solid rgb(235, 235, 235);
+    border-left: 1px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(235, 235, 235);
+}
+
+.ribbon_btn_computer_text {
+    font-size: 12px;
+    margin-top: 0px;
+    color: black;
+    padding-top: 3px;
+    padding-left: 13px;
+}
+
+.ribbon_btn_view {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    width: 46px;
+    height: 22px;
+    position: fixed;
+    top: 0px;
+    left: 146px;
+    margin-top: 0px;
+
+    transition: ease 0.2s;
+}
+
+.ribbon_btn_view_active {
+    border-top: 1px solid rgb(218, 218, 218);
+    border-left: 1px solid rgb(218, 218, 218);
+    border-right: 1px solid rgb(218, 218, 218);
+    width: 46px;
+    height: 22px;
+    position: fixed;
+    top: 0px;
+    left: 146px;
+    margin-top: 0px;
+    background-color: rgb(245, 245, 245);
+    transition: ease 0.1s;
+}
+
+.ribbon_btn_view:hover {
+    border-top: 1px solid rgb(235, 235, 235);
+    border-left: 1px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(235, 235, 235);
+}
+
+.ribbon_btn_view_text {
+    font-size: 12px;
+    margin-top: 0px;
+    color: black;
+    padding-top: 3px;
+    padding-left: 13px;
+}
+
+.ribbon_content {
+    position: absolute;
+    top:23px;
+    width: 100vw;
+    height: 93px;
+}
+
+.ribbon_content_computer {
+    background-color: brown;
+    width: 100%;
+    height:100%;
+}
+
+.ribbon_content_view {
+    background-color: blue;
+    width: 100%;
+    height:100%;
+}

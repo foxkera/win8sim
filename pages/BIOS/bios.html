@@ -68,8 +68,8 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 500px;"><p>SuperSecretDebugSettengSkipIndexWelcomeScreen</p></td>
-                <td><a class="SuperSecretDebugSettengSkipIndexWelcomeScreenCheckbox"><p><div id="SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv">false</div></p></a></td>
+                <td style="width: 500px;"><p>skipIndexHtml</p></td>
+                <td><a class="skipIndexHtmlCheckbox"><p><div id="skipIndexHtmlStateDiv">false</div></p></a></td>
                 <td style="width: 500px;"><p>Skips the welcome screen (index.html) and goes straight to loading.</p></td>
             </tr>
         </table>
@@ -107,17 +107,17 @@
     </div>
     <script src="../../script/jquery-2.1.1.js"></script>
     <script>
-        if (localStorage.getItem("SuperSecretDebugSettengSkipIndexWelcomeScreen") == "true") {
-            document.getElementById("SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv").innerHTML = "true"
+        if (localStorage.getItem("skipIndexHtml") == "true") {
+            document.getElementById("skipIndexHtmlStateDiv").innerHTML = "true"
         }
         $(function(){
-    $(".SuperSecretDebugSettengSkipIndexWelcomeScreenCheckbox").click(function(){
-        if (localStorage.getItem("SuperSecretDebugSettengSkipIndexWelcomeScreen") == "true") {
-            localStorage.setItem("SuperSecretDebugSettengSkipIndexWelcomeScreen", "false")
-            document.getElementById("SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv").innerHTML = "false"
+    $(".skipIndexHtmlCheckbox").click(function(){
+        if (localStorage.getItem("skipIndexHtml") == "true") {
+            localStorage.setItem("skipIndexHtml", "false")
+            document.getElementById("skipIndexHtmlStateDiv").innerHTML = "false"
         } else {
-            localStorage.setItem("SuperSecretDebugSettengSkipIndexWelcomeScreen", "true")
-            document.getElementById("SuperSecretDebugSettengSkipIndexWelcomeScreenStateDiv").innerHTML = "true"
+            localStorage.setItem("skipIndexHtml", "true")
+            document.getElementById("skipIndexHtmlStateDiv").innerHTML = "true"
         }
             
 
